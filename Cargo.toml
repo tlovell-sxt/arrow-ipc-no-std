@@ -1,0 +1,16 @@
+[package]
+name = "analyze-record-batch-message"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = ["fbs"]
+
+[workspace.dependencies]
+fbs = { path = "./fbs" }
+flatbuffers = { version = "25.12.19", default-features = false }
+
+[dependencies]
+fbs.workspace = true
+hex = "0.4.3"
+flatbuffers.workspace = true
