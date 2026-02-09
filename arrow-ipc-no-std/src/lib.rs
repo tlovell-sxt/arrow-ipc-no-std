@@ -11,5 +11,7 @@
     clippy::doc_lazy_continuation
 )]
 #[path = "../target/flatbuffers/Message_generated.rs"]
-mod generated;
-pub use generated::*;
+pub mod generated;
+
+mod parser_combinators;
+pub use parser_combinators::{finish, single_batch_stream_parser, SingleBatchStream};
