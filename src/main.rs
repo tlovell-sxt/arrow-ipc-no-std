@@ -1,6 +1,6 @@
 use std::io::{read_to_string, stdin};
 
-use fbs::Message::{root_as_message, Message};
+use arrow_ipc_no_std::org::apache::arrow::flatbuf::{root_as_message, Message};
 
 const CONTINUATION_MARKER: [u8; 4] = [255, 255, 255, 255];
 

@@ -1,4 +1,3 @@
-#![no_std]
 // Licensed to the Apache Software Foundation (ASF) under one
 // or more contributor license agreements.  See the NOTICE file
 // distributed with this work for additional information
@@ -16,17 +15,38 @@
 // specific language governing permissions and limitations
 // under the License.
 
-//! Generated code
+include "Schema.fbs";
 
-#![allow(non_snake_case)]
+namespace org.apache.arrow.flatbuf;
 
-#[allow(clippy::all)]
-pub mod File;
-#[allow(clippy::all)]
-pub mod Message;
-#[allow(clippy::all)]
-pub mod Schema;
-#[allow(clippy::all)]
-pub mod SparseTensor;
-#[allow(clippy::all)]
-pub mod Tensor;
+/// ----------------------------------------------------------------------
+/// Arrow File metadata
+///
+
+table Footer {
+  version: org.apache.arrow.flatbuf.MetadataVersion;
+
+  schema: org.apache.arrow.flatbuf.Schema;
+
+  dictionaries: [ Block ];
+
+  recordBatches: [ Block ];
+
+  /// User-defined metadata
+  custom_metadata: [ KeyValue ];
+}
+
+struct Block {
+
+  /// Index to the start of the RecordBatch (note this is past the Message header)
+  offset: long;
+
+  /// Length of the metadata
+  metaDataLength: int;
+
+  /// Length of the data (this is aligned so there can be a gap between this and
+  /// the metadata).
+  bodyLength: long;
+}
+
+root_type Footer;

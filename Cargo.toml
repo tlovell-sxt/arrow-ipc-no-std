@@ -4,13 +4,14 @@ version = "0.1.0"
 edition = "2021"
 
 [workspace]
-members = ["fbs"]
+members = ["arrow-ipc-no-std"]
 
 [workspace.dependencies]
-fbs = { path = "./fbs" }
+arrow-ipc-no-std = { path = "./arrow-ipc-no-std" }
 flatbuffers = { version = "25.12.19", default-features = false }
+hex = "0.4.3"
 
 [dependencies]
-fbs.workspace = true
-hex = "0.4.3"
+hex.workspace = true
+arrow-ipc-no-std.workspace = true
 flatbuffers.workspace = true

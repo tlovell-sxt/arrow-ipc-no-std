@@ -24,6 +24,7 @@
           (mkShell.override {stdenv = gcc13Stdenv;}) {
             buildInputs = [
               rust-bin.stable.latest.default
+              flatbuffers
             ];
           };
       }

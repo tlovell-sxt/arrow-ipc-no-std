@@ -6,9 +6,17 @@ version = 4
 name = "analyze-record-batch-message"
 version = "0.1.0"
 dependencies = [
- "fbs",
+ "arrow-ipc-no-std",
  "flatbuffers",
  "hex",
+]
+
+[[package]]
+name = "arrow-ipc-no-std"
+version = "0.1.0"
+dependencies = [
+ "flatbuffers",
+ "flatc-rust",
 ]
 
 [[package]]
@@ -16,13 +24,6 @@ name = "bitflags"
 version = "2.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "812e12b5285cc515a9c72a5c1d3b6d46a19dac5acfef5265968c166106e31dd3"
-
-[[package]]
-name = "fbs"
-version = "0.1.0"
-dependencies = [
- "flatbuffers",
-]
 
 [[package]]
 name = "flatbuffers"
@@ -35,10 +36,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "flatc-rust"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "57e61227926ef5b237af48bee74394cc4a5a221ebd10c5147a98e612f207851d"
+dependencies = [
+ "log",
+]
+
+[[package]]
 name = "hex"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+
+[[package]]
+name = "log"
+version = "0.4.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5e5032e24019045c762d3c0f28f5b6b8bbf38563a65908389bf7978758920897"
 
 [[package]]
 name = "rustc_version"
