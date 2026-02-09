@@ -13,5 +13,5 @@
 #[path = "../target/flatbuffers/Message_generated.rs"]
 pub mod generated;
 
-mod parser_combinators;
-pub use parser_combinators::{finish, single_batch_stream_parser, SingleBatchStream};
+mod stream_parser_combinators;
+pub use stream_parser_combinators::{finish, single_batch_stream_parser, SingleBatchStream};
